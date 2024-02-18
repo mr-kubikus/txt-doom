@@ -8,23 +8,25 @@ Target:
 
 
 ## Start from release binaries right now
-1. Download txt-doom-bin.tar.gz file from github 
+1. Download txt-doom.tar.gz file from github releases - https://github.com/mr-kubikus/txt-doom/releases
 2. Connect your PC to the target via WIFI or USB link. Use following IP addresses to reach the TXT:
-    USB  - 192.168.7.2
-    WIFI - 192.168.8.2
+    USB       - 192.168.7.2
+    WIFI      - 192.168.8.2
+    Bluetooth - 192.168.8.2
 3. Default password is ROBOPro
-4. Upload txt-doom-bin.tar.gz to the target:
+4. Upload txt-doom.tar.gz to the target:
 ~~~
-scp txt-doom-bin.tar.gz ROBOPro@192.168.7.2:/tmp
+scp txt-doom.tar.gz ROBOPro@192.168.7.2:/tmp
 ~~~
 5. Connect to the target via ssh. Unpack first and than start the game:
 ~~~
 ssh ROBOPro@192.168.7.2
 cd /tmp
-tar xzf txt-doom-bin.tar.gz
-cd /tmp/txt-doom
-prboom-plus -width 240 -height 240 -warp 1
+tar xzf txt-doom.tar.gz
+cd txt-doom
+./prboom-plus -width 240 -height 240 -warp 1
 ~~~
+6. Optionally you may kill the TxtControlMain to prevent access to the shared LCD
 
 
 ## Dependencies
